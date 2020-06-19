@@ -19,7 +19,7 @@ function createPassword() {
 }
 
 function promptCriteria(){
-  
+
   var passwordLength = 0;
   var specialCharacters = false;
   var lowercase = false;
@@ -65,7 +65,11 @@ function promptCriteria(){
     numbers,
   };
   return criteria;
-}
+};
+
+function generatePassword(criteria) {
+  var password = "";
+  var acceptableCharacters = [];
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", createPassword);
