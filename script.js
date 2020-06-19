@@ -71,5 +71,28 @@ function generatePassword(criteria) {
   var password = "";
   var acceptableCharacters = [];
 
+  if (criteria.specialCharacters) {
+    acceptableCharacters = acceptableCharacters.concat(["!", "@", "#", "$", "%", "^", "&", "*"])
+  }
+
+  if (criteria.lowercase) {
+    // TODO - Add more lowercase
+    // acceptableCharacters = acceptableCharacters.concat(["a", "b", "c", "d", "e", "f", "g", "h", "i"])
+    acceptableCharacters = acceptableCharacters.concat('abcdefghijklmnopqrstuvwxyz'.split(''));
+  }
+
+  if (criteria.uppercase) {
+    // TODO - Add more uppercase
+    // acceptableCharacters = acceptableCharacters.concat(["A", "B", "C", "D", "E", "F", "G", "H", "I"])
+    acceptableCharacters = acceptableCharacters.concat('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''))
+
+  }
+
+  if (criteria.numbers) {
+    // TODO - Add more numbers
+    acceptableCharacters = acceptableCharacters.concat(["1", "2", "3", "4", "5", "6", "7", "8", "9"])
+  }
+
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", createPassword);
