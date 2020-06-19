@@ -19,6 +19,13 @@ function createPassword() {
 }
 
 function promptCriteria(){
+  
+  var passwordLength = 0;
+  var specialCharacters = false;
+  var lowercase = false;
+  var uppercase = false;
+  var numbers = false;
+
   while (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
     // Ask user for the length of password using a 'prompt()'
     passwordLength = prompt("Password length: Please choose a number between 8 to 128 ")
@@ -50,6 +57,14 @@ function promptCriteria(){
       continue;
     }
   };
+  var criteria = {
+    passwordLength,
+    specialCharacters,
+    lowercase,
+    uppercase,
+    numbers,
+  };
+  return criteria;
 }
 
 // Add event listener to generate button
