@@ -94,8 +94,7 @@ function generatePassword(criteria) {
 
     password = password + acceptableCharacters[Math.floor(Math.random() * acceptableCharacters.length)];
 
-  }
-
+  };
   return password
 };
 
